@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Nama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Selamat Datang, Silahkan Masukan Nama Anda</h1>
+        <form>
+            <input v-model="nama" type="text" placeholder="Masukan Nama Kamu">
+            <input v-model="umur" type="number" placeholder="Masukan Umur Kamu">
+            <input v-model="alamat" type="text" placeholder="Masukan Alamat Kamu">
+            <label>
+                <input type="radio" name="gender" v-model="gender" value="Laki-Laki">
+                Laki-Laki
+            </label>
+            <label>
+                <input type="radio" name="gender" v-model="gender" value="Perempuan">
+                Perempuan
+            </label>
+        </form>
+        <p>Halo, nama awak {{ nama }}, umua {{ umur }} tahun. Awak
+            ko {{ gender }} tingga di {{ alamat }}.</p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nama: '',
+                umur: '',
+                alamat: '',
+                gender: ''
+            }
+        })
+    </script>
+</body>
+</html>
